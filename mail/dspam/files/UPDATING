@@ -36,6 +36,7 @@ Upstream Changes:
 
 Port Changes:
 - Merge mail/dspam-devel and mail/dspam (PR #193693)
+- Update to OptionsNG
 - Port cleanup by various submitters, thanks! [1][2][3][4][5]
 
 [1] Patch from <yds@CoolRat.org> (PR #180695, #191610)

@@ -191,7 +191,7 @@ SUB_LIST+=	CLAMD=
 .	endif
 .endif
 
-# we need to know if we are building statically or dynamicaly for the plist
+# we need to know if we are building statically or dynamically for the plist
 _DBDRV_COUNT=	# blank, but defined so we can check against it
 _DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
