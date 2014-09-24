@@ -37,6 +37,7 @@ Upstream Changes:
 Port Changes:
 - Merge mail/dspam-devel and mail/dspam (PR #193693)
 - Update to OptionsNG
+- Fix pidfile location discrepancy introduced in 3.10.2
 - Port cleanup by various submitters, thanks! [1][2][3][4][5]
 
 [1] Patch from <yds@CoolRat.org> (PR #180695, #191610)
