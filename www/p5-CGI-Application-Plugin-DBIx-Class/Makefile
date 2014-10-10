@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	configure
