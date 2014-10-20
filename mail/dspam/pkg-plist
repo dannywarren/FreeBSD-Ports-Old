@@ -85,7 +85,6 @@ man/man3/libdspam.3.gz
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7.0.0
-@dirrm lib/dspam
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -105,7 +104,6 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/relay.txt
 %%PORTDOCS%%%%DOCSDIR%%/sendmail.txt
 %%PORTDOCS%%%%DOCSDIR%%/sqlite_drv.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
@@ -113,16 +111,12 @@ libdata/pkgconfig/dspam.pc
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
 %%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
-%%PORTEXAMPLES%%%%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
 %%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
 %%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
 %%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
-%%PORTEXAMPLES%%%%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%PORTEXAMPLES%%%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
 %%PORTEXAMPLES%%%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
-%%PORTEXAMPLES%%%%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%WebUI%%%%WWWDIR%%/admins.sample
 %%WebUI%%%%WWWDIR%%/admin.cgi
 %%WebUI%%%%WWWDIR%%/admingraph.cgi
@@ -228,15 +222,6 @@ libdata/pkgconfig/dspam.pc
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_preferences.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_quarantine.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_viewmessage.html
-%%WebUI%%@dirrm %%WWWDIR%%/templates/de
-%%WebUI%%@dirrm %%WWWDIR%%/templates/es-es
-%%WebUI%%@dirrm %%WWWDIR%%/templates/fr
-%%WebUI%%@dirrm %%WWWDIR%%/templates/he
-%%WebUI%%@dirrm %%WWWDIR%%/templates/pt-br
-%%WebUI%%@dirrm %%WWWDIR%%/templates/ro
-%%WebUI%%@dirrm %%WWWDIR%%/templates
-%%WebUI%%@dirrm %%WWWDIR%%
-@dirrm include/dspam
 @cwd %%DSPAM_HOME%%
 firstrun.txt.sample
 firstspam.txt.sample
@@ -245,11 +230,9 @@ quarantinefull.txt.sample
 @owner %%DSPAM_HOME_OWNER%%
 @group %%DSPAM_HOME_GROUP%%
 @mode %%DSPAM_HOME_MODE%%
-@dirrm %%DSPAM_HOME%%
 @mode
 @exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%DSPAM_HOME%%
 @exec chmod %%DSPAM_HOME_MODE%% %%DSPAM_HOME%%
 @exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%LOG_DIR%%
-@dirrmtry %%LOG_DIR%%
 @group wheel
 @owner root

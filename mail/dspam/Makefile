@@ -1,5 +1,5 @@
 # Created by: Dominic Marks <dom@wirespeed.org.uk>
-# $FreeBSD: head/mail/dspam/Makefile 368416 2014-09-17 20:43:12Z cs $
+# $FreeBSD: head/mail/dspam/Makefile 371290 2014-10-20 18:48:31Z pi $
 
 # Note to committers: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
@@ -7,9 +7,8 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.10.2
-PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	SF 
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danny@dannywarren.com
@@ -138,7 +137,7 @@ CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 # we set DSPAM_MODE at the end as some LDAs want specific mode
 PLIST_SUB+=	DSPAM_OWNER=${DSPAM_OWNER} \
 		DSPAM_GROUP=${DSPAM_GROUP} \
-		DSPAM_MODE=${DSPAM_MODE} 
+		DSPAM_MODE=${DSPAM_MODE}
 
 _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
@@ -196,7 +195,7 @@ _DBDRV_COUNT=	# blank, but defined so we can check against it
 _DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 			--with-pgsql-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	PGSQL=""
