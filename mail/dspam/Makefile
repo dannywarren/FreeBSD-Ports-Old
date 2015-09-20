@@ -1,5 +1,5 @@
 # Created by: Dominic Marks <dom@wirespeed.org.uk>
-# $FreeBSD: head/mail/dspam/Makefile 371290 2014-10-20 18:48:31Z pi $
+# $FreeBSD: head/mail/dspam/Makefile 386312 2015-05-14 10:15:04Z mat $
 
 # Note to committers: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
@@ -8,8 +8,7 @@
 PORTNAME=	dspam
 PORTVERSION=	3.10.2
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Bayesian spam filter
@@ -202,7 +201,7 @@ PLIST_SUB+=	PGSQL=""
 #PKGNAMESUFFIX=	-pgsql
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .	if ${PORT_OPTIONS:MPGSQL_LOCAL}
-USE_PGSQL=	server
+WANT_PGSQL=	server
 SUB_LIST+=	PGSQL=postgresql
 .	else
 SUB_LIST+=	PGSQL=
