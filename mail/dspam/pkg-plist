@@ -15,7 +15,7 @@ bin/dspam_notify
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 bin/dspam_train
-@sample(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,640) etc/dspam.conf.sample
+@sample(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,%%DSPAM_SAMPLE_MODE%%) etc/dspam.conf.sample
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/config_shared.h
