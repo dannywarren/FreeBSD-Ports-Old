@@ -206,9 +206,9 @@ libdata/pkgconfig/dspam.pc
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_preferences.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_quarantine.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_viewmessage.html
-%%DSPAM_HOME%%/firstrun.txt.sample
-%%DSPAM_HOME%%/firstspam.txt.sample
-%%DSPAM_HOME%%/quarantinefull.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/firstrun.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/firstspam.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/quarantinefull.txt.sample
 @dir(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%,%%DSPAM_HOME_MODE%%) %%DSPAM_HOME%%
 @dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%LOG_DIR%%
 @dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%RUN_DIR%%
