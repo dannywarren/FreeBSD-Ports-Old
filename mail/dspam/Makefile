@@ -101,6 +101,9 @@ CONFLICTS=	dspam-devel-[0-9]*
 SIGNATURE_LIFE?=	15
 
 _VAR_DIR=	/var
+
+RUN_DIR?=	${_VAR_DIR}/run/dspam
+
 LOG_DIR?=	${_VAR_DIR}/log/dspam
 LOGFILE?=	${LOG_DIR}/dspam.log
 
@@ -127,6 +130,7 @@ PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME} \
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
+PLIST_SUB+=	RUN_DIR=${RUN_DIR}
 
 CONFIGURE_ARGS+=	--with-dspam-home=${DSPAM_HOME}
 CONFIGURE_ARGS+=	--with-dspam-home-owner=${DSPAM_HOME_OWNER}
@@ -561,7 +565,8 @@ post-install:
 		${INSTALL_DATA} ${_file}.sample ${STAGEDIR}${DSPAM_HOME}
 .endfor
 
-	@${MKDIR} -m ${DSPAM_HOME_MODE} ${STAGEDIR}${LOG_DIR}
+	@${MKDIR} ${STAGEDIR}${RUN_DIR}
+	@${MKDIR} ${STAGEDIR}${LOG_DIR}
 
 	@${CAT} ${WRKSRC}/README.FreeBSD
 

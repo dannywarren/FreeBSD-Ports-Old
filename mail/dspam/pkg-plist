@@ -210,4 +210,5 @@ libdata/pkgconfig/dspam.pc
 %%DSPAM_HOME%%/firstspam.txt.sample
 %%DSPAM_HOME%%/quarantinefull.txt.sample
 @dir(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%,%%DSPAM_HOME_MODE%%) %%DSPAM_HOME%%
-@dir(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%LOG_DIR%%
+@dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%LOG_DIR%%
+@dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%RUN_DIR%%
