@@ -428,6 +428,7 @@ pre-extract:
 	@${ECHO_CMD} "DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP}"
 	@${ECHO_CMD} "DSPAM_HOME_MODE=${DSPAM_HOME_MODE} (default: 0770)"
 	@${ECHO_CMD} "LOG_DIR=${LOG_DIR} (default: ${_VAR_DIR}/log/dspam)"
+	@${ECHO_CMD} "RUN_DIR=${RUN_DIR} (default: ${_VAR_DIR}/run/dspam)"
 .	ifdef(WITHOUT_SYSLOG)
 	@${ECHO_CMD} "LOGFILE=${LOGFILE} (default: ${_VAR_DIR}/log/dspam/dspam.log)"
 .	endif
