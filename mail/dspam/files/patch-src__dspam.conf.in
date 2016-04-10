@@ -1,5 +1,5 @@
 --- src/dspam.conf.in.orig	2012-04-11 11:48:33.000000000 -0700
-+++ src/dspam.conf.in	2016-04-10 16:04:02.850047015 -0700
++++ src/dspam.conf.in	2016-04-10 16:27:44.179947888 -0700
 @@ -56,6 +56,7 @@
  # necessary if you plan on allowing untrusted processing.
  #
@@ -35,15 +35,18 @@
  #PgSQLPort		
  #PgSQLUser		dspam
  #PgSQLPass		changeme
-@@ -807,7 +808,7 @@
+@@ -807,9 +808,9 @@
  # interfaces.
  #
  #ServerHost		127.0.0.1
 -#ServerPort		24
 +#ServerPort		2424
  #ServerQueueSize	32
- #ServerPID		/var/run/dspam.pid
+-#ServerPID		/var/run/dspam.pid
++#ServerPID		/var/run/dspam/dspam.pid
  
+ #
+ # ServerMode specifies the type of LMTP server to start. This can be one of:
 @@ -845,18 +846,18 @@
  # you are running the client and server on the same machine, as it eliminates
  # much of the bandwidth overhead.
