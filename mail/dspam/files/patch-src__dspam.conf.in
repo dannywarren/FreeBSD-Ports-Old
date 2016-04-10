@@ -1,5 +1,5 @@
---- src/dspam.conf.in.orig	2014-09-18 00:33:02.874722063 -0700
-+++ src/dspam.conf.in	2014-09-18 00:41:49.434685786 -0700
+--- src/dspam.conf.in.orig	2012-04-11 11:48:33.000000000 -0700
++++ src/dspam.conf.in	2016-04-10 16:04:02.850047015 -0700
 @@ -56,6 +56,7 @@
  # necessary if you plan on allowing untrusted processing.
  #
@@ -35,7 +35,16 @@
  #PgSQLPort		
  #PgSQLUser		dspam
  #PgSQLPass		changeme
-@@ -845,14 +846,14 @@
+@@ -807,7 +808,7 @@
+ # interfaces.
+ #
+ #ServerHost		127.0.0.1
+-#ServerPort		24
++#ServerPort		2424
+ #ServerQueueSize	32
+ #ServerPID		/var/run/dspam.pid
+ 
+@@ -845,18 +846,18 @@
  # you are running the client and server on the same machine, as it eliminates
  # much of the bandwidth overhead.
  #
@@ -52,3 +61,8 @@
  #ClientIdent	"secret@Relay1"
  #
  #ClientHost	127.0.0.1
+-#ClientPort	24
++#ClientPort	2424
+ #ClientIdent	"secret@Relay1"
+ 
+ # --- RABL ---
