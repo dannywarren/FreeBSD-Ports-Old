@@ -472,8 +472,8 @@ pre-configure:
 	@${FALSE}
 .endif
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( defined(USE_MYSQL) || \
-	${PORT_OPTIONS:MPGSQL} || defined(USE_SQLITE) )
-	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for EXTERNAL_LOOKUP."
+	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3} )
+	@${ECHO_CMD} "You need MySQL, Postgres or SQLite for EXTERNAL_LOOKUP."
 	@${FALSE}
 .endif
 .if ${PORT_OPTIONS:MUSER_HOMEDIR} && ${PORT_OPTIONS:MWEBUI}
@@ -513,7 +513,7 @@ post-install:
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/pgsql
 .endif
-.ifdef(USE_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
