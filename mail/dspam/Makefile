@@ -222,20 +222,20 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
+USES+=		sqlite:3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite3_drv,//}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
+USES+=		sqlite:2
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
 .endif
 
-.if defined(USE_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE3} || ${PORT_OPTIONS:MSQLITE2}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE=""
