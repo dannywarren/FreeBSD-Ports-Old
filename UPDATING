@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+201604127:
+  AFFECTS: Users of mail/dspam
+  AUTHOR: junovitch@FreeBSD.org
+
+  dspam has been modified to no longer run as root:mail by default.
+  Existing configuration must be adjusted to reflect using a non-priveleged
+  port and the /var/run/dspam directory for PID and socket files.
+  
 20160414:
   AFFECTS: Users of net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org

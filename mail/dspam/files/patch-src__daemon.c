@@ -1,6 +1,6 @@
---- src/daemon.c.orig	2012-04-11 11:48:33.000000000 -0700
-+++ src/daemon.c	2016-04-10 15:57:50.654336293 -0700
-@@ -97,7 +97,7 @@
+--- src/daemon.c.orig   2012-04-11 18:48:33 UTC
++++ src/daemon.c
+@@ -97,7 +97,7 @@ int daemon_listen(DRIVER_CTX *DTX) {
    int domain = 0;		/* listening on domain socket? */
    int listener;			/* listener fd */
    int i;

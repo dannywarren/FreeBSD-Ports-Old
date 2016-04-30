@@ -1,6 +1,6 @@
---- src/client.c.orig	2012-04-11 11:48:33.000000000 -0700
-+++ src/client.c	2016-04-10 15:57:58.146105267 -0700
-@@ -304,7 +304,7 @@
+--- src/client.c.orig   2012-04-11 18:48:33 UTC
++++ src/client.c
+@@ -304,7 +304,7 @@ int client_connect(AGENT_CTX *ATX, int f
    struct sockaddr_un saun;
    int sockfd;
    int yes = 1;
