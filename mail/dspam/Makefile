@@ -267,7 +267,7 @@ PLIST_SUB+=	HASH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USES+=		yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
