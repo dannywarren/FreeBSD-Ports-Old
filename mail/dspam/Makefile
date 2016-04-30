@@ -1,5 +1,5 @@
 # Created by: Dominic Marks <dom@wirespeed.org.uk>
-# $FreeBSD: head/mail/dspam/Makefile 412348 2016-04-01 14:17:44Z mat $
+# $FreeBSD: head/mail/dspam/Makefile 414014 2016-04-25 16:13:38Z mat $
 
 # Note to committers: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
@@ -232,20 +232,20 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
+USES+=		sqlite:3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite3_drv,//}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
+USES+=		sqlite:2
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
 .endif
 
-.if defined(USE_SQLITE)
+.if ${USES:Msqlite*}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE=""
@@ -490,7 +490,7 @@ pre-configure:
 	@${FALSE}
 .endif
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( defined(USE_MYSQL) || \
-	${PORT_OPTIONS:MPGSQL} || defined(USE_SQLITE) )
+	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MSQLITE*} )
 	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for EXTERNAL_LOOKUP."
 	@${FALSE}
 .endif
@@ -531,7 +531,7 @@ post-install:
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/pgsql
 .endif
-.ifdef(USE_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE*}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
