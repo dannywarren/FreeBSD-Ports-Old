@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	SYSLOG DEBUG VERBOSE_DEBUG BNR_DEBUG PREF_EXT DAEMON \
 		CLAMAV CLAMAV_LOCAL EXTERNAL_LOOKUP \
 		USER_HOMEDIR TRUSTED_USERS VIRT_USERS LONG_USERNAMES \
 		LARGE_SCALE DOMAIN_SCALE NICESENDMAIL POSTFIX_MBC \
-		QMAIL WEBUI LIGHTTPD DOCS EXAMPLES
+		QMAIL WEBUI LIGHTTPD DOCS EXAMPLES SETUID
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	HASH MYSQL MYSQL_COMPRESS MYSQL_LOCAL \
@@ -73,6 +73,7 @@ POSTFIX_MBC_DESC=	Dspam as mailbox_command in Postfix
 QMAIL_DESC=		Play nice with Qmail mail server
 WEBUI_DESC=		Install WebUI (RUN_DEPEND on Apache/Lighttpd)
 LIGHTTPD_DESC=		RUN_DEPEND on Lighttpd instead of Apache
+SETUID_DESC=		Run as root:mail with setuid (insecure)
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5 libtool shebangfix
@@ -100,6 +101,8 @@ CONFLICTS=	dspam-devel-[0-9]*
 
 SIGNATURE_LIFE?=	15
 
+.include <bsd.port.options.mk>
+
 _VAR_DIR=	/var
 
 RUN_DIR?=	${_VAR_DIR}/run/dspam
@@ -107,9 +110,15 @@ RUN_DIR?=	${_VAR_DIR}/run/dspam
 LOG_DIR?=	${_VAR_DIR}/log/dspam
 LOGFILE?=	${LOG_DIR}/dspam.log
 
+.if ${PORT_OPTIONS:MSETUID}
+DSPAM_OWNER?=	root
+DSPAM_GROUP?=	mail
 DSPAM_MODE?=	4510
+.else
 DSPAM_OWNER?=	${USERS}
 DSPAM_GROUP?=	${GROUPS}
+DSPAM_MODE?=	0555
+.endif
 
 DSPAM_ETC?=	${LOCALBASE}/etc
 DSPAM_HOME?=	${_VAR_DIR}/db/dspam
@@ -155,7 +164,6 @@ _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
 		-e '/^%%FreeBSD/D'
 
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
@@ -185,6 +193,8 @@ CONFIGURE_ARGS+=	--enable-daemon
 USE_RC_SUBR=	${PORTNAME}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
+SUB_LIST+=	DSPAM_OWNER=${DSPAM_OWNER}
+SUB_LIST+=	DSPAM_GROUP=${DSPAM_GROUP}
 .else
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
@@ -279,6 +289,14 @@ CONFIGURE_ARGS+=	--with-storage-driver=${_DBDRV:S/,$//}
 PLIST_SUB+=	DYNAMIC=""
 .else
 PLIST_SUB+=	DYNAMIC="@comment "
+.endif
+
+.if %{PORT_OPTIONS:MSETUID}
+PLIST_SUB+=	SETUID=""
+PLIST_SUB+=	NOSETUID="@comment "
+.else
+PLIST_SUB+=	SETUID="@comment "
+PLIST_SUB+=	NOSETUID=""
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP}

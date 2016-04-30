@@ -2,7 +2,8 @@
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssconvert
 %%HASH%%bin/cssstat
-@(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,%%DSPAM_MODE%%) bin/dspam
+%%SETUID%%@(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,%%DSPAM_MODE%%) bin/dspam
+%%NOSETUID%%bin/dspam
 bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
