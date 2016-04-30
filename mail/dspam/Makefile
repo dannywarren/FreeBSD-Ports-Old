@@ -252,9 +252,9 @@ PLIST_SUB+=	SQLITE2="@comment "
 .if ${USES:Msqlite*}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-PLIST_SUB+=    SQLITE=""
+PLIST_SUB+=	SQLITE=""
 .else
-PLIST_SUB+=    SQLITE="@comment "
+PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHASH}
