@@ -267,7 +267,7 @@ PLIST_SUB+=	HASH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
@@ -276,7 +276,7 @@ _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
 .	if ${PORT_OPTIONS:MMYSQL_LOCAL}
-USE_MYSQL=	server
+WANT_MYSQL=	server
 SUB_LIST+=	MYSQL=mysql
 .	else
 SUB_LIST+=	MYSQL=
@@ -478,24 +478,24 @@ post-patch:
 		${WRKSRC}/src/tools/dspam_notify.in
 
 pre-configure:
-.if ${PORT_OPTIONS:MVIRT_USERS} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MVIRT_USERS} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or HASH for virtual users."
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MPREF_EXT} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MPREF_EXT} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MDAEMON} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MDAEMON} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MSQLITE*} )
-	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for EXTERNAL_LOOKUP."
+	@${ECHO_CMD} "You need MySQL, Postgres or SQLite for EXTERNAL_LOOKUP."
 	@${FALSE}
 .endif
 .if ${PORT_OPTIONS:MUSER_HOMEDIR} && ${PORT_OPTIONS:MWEBUI}
@@ -520,7 +520,7 @@ post-install:
 		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-.ifdef(USE_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mysql
 	cd  ${WRKSRC}/src/tools.mysql_drv && \
 		${INSTALL_DATA} mysql_objects-4.1.sql \
