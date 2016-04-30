@@ -234,23 +234,27 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 .if ${PORT_OPTIONS:MSQLITE3}
 USES+=		sqlite:3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
+PLIST_SUB+=	SQLITE3=""
 .else
 _DBDRV:=	${_DBDRV:S/sqlite3_drv,//}
+PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
 USES+=		sqlite:2
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
+PLIST_SUB+=	SQLITE2=""
 .else
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
+PLIST_SUB+=	SQLITE2="@comment "
 .endif
 
 .if ${USES:Msqlite*}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-PLIST_SUB+=	SQLITE=""
+PLIST_SUB+=    SQLITE=""
 .else
-PLIST_SUB+=	SQLITE="@comment "
+PLIST_SUB+=    SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHASH}
