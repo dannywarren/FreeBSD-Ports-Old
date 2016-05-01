@@ -1,6 +1,6 @@
 %%PERL5_MAN3%%/CGI::Application::Plugin::DBIx::Class.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/DBIx/Class.pm
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/DBIx
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
-@dirrmtry %%SITE_PERL%%/CGI/Application
-@dirrmtry %%SITE_PERL%%/CGI
+@dir %%SITE_PERL%%/CGI/Application/Plugin/DBIx
+@dir %%SITE_PERL%%/CGI/Application/Plugin
+@dir %%SITE_PERL%%/CGI/Application
+@dir %%SITE_PERL%%/CGI
