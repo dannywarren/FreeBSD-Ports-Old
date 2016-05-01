@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::ActionDispatch.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::ActionDispatch:Attributes.3.gz
+%%SITE_PERL%%/CGI/Application/Plugin/ActionDispatch.pm
+%%SITE_PERL%%/CGI/Application/Plugin/ActionDispatch/Attributes.pm
+@dir %%SITE_PERL%%/CGI/Application/Plugin/ActionDispatch
+@dir %%SITE_PERL%%/CGI/Application/Plugin
+@dir %%SITE_PERL%%/CGI/Application
+@dir %%SITE_PERL%%/CGI
