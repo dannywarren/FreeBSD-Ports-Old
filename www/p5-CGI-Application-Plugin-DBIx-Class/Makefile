@@ -1,8 +1,8 @@
 # Created by: Danny Warren <danny@dannywarren.com>
 # $FreeBSD$
 
-PORTNAME=       CGI-Application-Plugin-DBIx-Class
-PORTVERSION=    1.000101
+PORTNAME=	CGI-Application-Plugin-DBIx-Class
+PORTVERSION=	1.000101
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
