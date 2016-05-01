@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
 		p5-SQL-Translator>=0.11002:databases/p5-SQL-Translator \
 		p5-parent>=0:devel/p5-parent 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep 
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure
