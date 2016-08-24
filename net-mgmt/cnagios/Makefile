@@ -10,8 +10,6 @@ COMMENT=	Curses-based interface for nagios
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	nagios>=3.0:net-mgmt/nagios
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	dannywarren
 
@@ -20,8 +18,7 @@ ETCDIR=		${PREFIX}/etc/nagios
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 		--with-var-dir="${NAGIOSDIR}" \
-		--with-status-file="${NAGIOSDIR}/status.dat" \
-		--with-nagios-data=3
+		--with-status-file="${NAGIOSDIR}/status.dat"
 USES=		ncurses perl5
 MAKE_ARGS=	LIBS="-lncurses"
 ALL_TARGET=	cnagios
