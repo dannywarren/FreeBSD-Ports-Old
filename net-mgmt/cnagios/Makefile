@@ -2,7 +2,7 @@
 # $FreeBSD: head/net-mgmt/cnagios/Makefile 412348 2016-04-01 14:17:44Z mat $
 
 PORTNAME=	cnagios
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	alexander.4mail@gmail.com
