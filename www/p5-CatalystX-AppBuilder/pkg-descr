@@ -1,4 +1,4 @@
-Catalyst::View::TT::Alloy
-Template::Alloy views for Catalyst
+CatalystX::AppBuilder
+Programatically build your Catalyst app
 
-WWW: http://search.cpan.org/dist/Catalyst-View-TT-Alloy/
+WWW: http://search.cpan.org/dist/CatalystX-AppBuilder/
