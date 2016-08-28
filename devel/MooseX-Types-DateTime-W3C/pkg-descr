@@ -1,0 +1,4 @@
+MooseX::Types::DateTime::W3C
+W3C DateTime format type constraint
+
+WWW: http://search.cpan.org/dist/MooseX-Types-DateTime-W3C

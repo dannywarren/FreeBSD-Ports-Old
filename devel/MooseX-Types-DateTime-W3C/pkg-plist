@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/MooseX::Types::DateTime::W3C.3.gz
+%%SITE_PERL%%/MooseX/Types/DateTime/W3C.pm
+@dir %%SITE_PERL%%/MooseX
+@dir %%SITE_PERL%%/MooseX/Types
+@dir %%SITE_PERL%%/MooseX/Types/DateTime
+
