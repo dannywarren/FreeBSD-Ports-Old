@@ -1,5 +1,5 @@
 # Created by: Danny Warren <danny@dannywarren.com>
-# $FreeBSD$
+# $FreeBSD: head/www/p5-Catalyst-View-TT-Alloy/Makefile 421011 2016-08-28 08:05:47Z pi $
 
 PORTNAME=	Catalyst-View-TT-Alloy
 PORTVERSION=	0.00007

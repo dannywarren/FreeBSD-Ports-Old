@@ -1,5 +1,5 @@
 # Created by: Danny Warren <danny@dannywarren.com>
-# $FreeBSD$
+# $FreeBSD: head/www/p5-CatalystX-VirtualComponents/Makefile 421018 2016-08-28 11:02:35Z pi $
 
 PORTNAME=	CatalystX-VirtualComponents
 PORTVERSION=	0.00004
