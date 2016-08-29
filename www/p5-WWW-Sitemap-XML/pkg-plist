@@ -1,0 +1,35 @@
+%%SITE_PERL%%/WWW/Sitemap/XML.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Image.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Image/Interface.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Video.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Video/Interface.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Video/Player.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Google/Video/Player/Interface.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/Types.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/URL.pm
+%%SITE_PERL%%/WWW/Sitemap/XML/URL/Interface.pm
+%%SITE_PERL%%/WWW/SitemapIndex/XML.pm
+%%SITE_PERL%%/WWW/SitemapIndex/XML/Sitemap.pm
+%%SITE_PERL%%/WWW/SitemapIndex/XML/Sitemap/Interface.pm
+%%PERL5_MAN3%%/WWW::Sitemap::XML.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Image.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Image::Interface.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Video.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Video::Interface.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Video::Player.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Google::Video::Player::Interface.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::Types.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::URL.3.gz
+%%PERL5_MAN3%%/WWW::Sitemap::XML::URL::Interface.3.gz
+%%PERL5_MAN3%%/WWW::SitemapIndex::XML.3.gz
+%%PERL5_MAN3%%/WWW::SitemapIndex::XML::Sitemap.3.gz
+%%PERL5_MAN3%%/WWW::SitemapIndex::XML::Sitemap::Interface.3.gz
+@dir %%SITE_PERL%%/WWW
+@dir %%SITE_PERL%%/WWW/Sitemap
+@dir %%SITE_PERL%%/WWW/Sitemap/XML
+@dir %%SITE_PERL%%/WWW/Sitemap/XML/Google/Image
+@dir %%SITE_PERL%%/WWW/Sitemap/XML/Google/Video
+@dir %%SITE_PERL%%/WWW/Sitemap/XML/Google/Video/Player
+@dir %%SITE_PERL%%/WWW/SitemapIndex
+@dir %%SITE_PERL%%/WWW/SitemapIndex/XML
+@dir %%SITE_PERL%%/WWW/SitemapIndex/XML/Sitemap
