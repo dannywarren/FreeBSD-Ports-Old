@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Moose>=2.1101:devel/p5-Moose \
 		p5-MooseX-Types>0:devel/p5-MooseX-Types \
 		p5-MooseX-Types-DateTime-W3C>0:devel/p5-MooseX-Types-DateTime-W3C \
 		p5-MooseX-Types-URI>0:devel/p5-MooseX-Types-URI \
-		p5-Scalar-List-Utils>0:devel/p5-Scalar-List-Utils \
+		p5-Scalar-List-Utils>0:lang/p5-Scalar-List-Utils \
 		p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
 
 USES=		perl5
